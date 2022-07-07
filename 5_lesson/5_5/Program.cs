@@ -39,7 +39,7 @@ int[] ProductOfPairsOfNumbersInArray(int[] originalArray)
     return result;
 }
 
-int[] originalArray = CreateNewArray(6);
+int[] originalArray = CreateNewArray(5);
 FillArray(originalArray);
 PrintArray(originalArray);
 Console.Write("-> ");
