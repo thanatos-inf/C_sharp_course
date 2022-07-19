@@ -33,21 +33,15 @@ int[,] MassNums(int row, int column, int from, int to)
 
 string FindElement(int [,] array, int rowPos, int columnPos)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        int row = array.GetLength(0);
-        int column = array.GetLength(1);
-
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if(i < array.GetLength(0) && j < array.GetLength(1)) 
-            Console.WriteLine(array[rowPos -1, columnPos -1]);
-            return;
-        }
-    }
-    Console.WriteLine($"{rowPos}, {columnPos} => такого числа в массиве нет");
+    int row = array.GetLength(0);
+    int column = array.GetLength(1);
+    
+    if(rowPos > row || columnPos > column)
+        return $"[{rowPos}, {columnPos}] => такого числа в массиве нет";
+    return $"Искомое число с позицией: [{rowPos}, {columnPos}] = {array[rowPos -1, columnPos -1]}";
 }
 
 int[,] arr_1 = MassNums(4, 4, 1, 10);
 Print(arr_1);
-FindElement(arr_1, 4, 4);
+Console.WriteLine(FindElement(arr_1, 3, 3));
+Console.WriteLine(FindElement(arr_1, 1, 7));
