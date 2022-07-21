@@ -1,16 +1,16 @@
 ﻿// Задайте прямоугольный двумерный массив. Напишите программу, которая 
 // будет находить строку с наименьшей суммой элементов.
 
-void Print(int[,] arr)
+void Print(int[,] matrix)
 {
-    int row_size = arr.GetLength(0);
-    int column_size = arr.GetLength(1);
+    int row_size = matrix.GetLength(0);
+    int column_size = matrix.GetLength(1);
 
     for (int i = 0; i < row_size; i++)
     {
         for (int j = 0; j < column_size; j++)
         {
-            Console.Write($" {arr[i, j]} ");
+            Console.Write($" {matrix[i, j]} ");
         }
         Console.WriteLine();
     }
@@ -19,29 +19,29 @@ void Print(int[,] arr)
 
 int[,] MassNums(int row, int column, int from, int to)
 {
-    int[,] arr = new int[row, column];
+    int[,] matrix = new int[row, column];
 
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < column; j++)
         {
-            arr[i, j] = new Random().Next(from, to);
+            matrix[i, j] = new Random().Next(from, to);
         }
     }
-    return arr;
+    return matrix;
 }
 
-void FindMinRow(int[,] array)
+void FindMinRow(int[,] matr)
 {
-    int row = array.GetLength(0);
-    int column = array.GetLength(1);
+    int row = matr.GetLength(0);
+    int column = matr.GetLength(1);
     int minSum = 1000;
     int minRow = 0;
 
     for (int i = 0; i < row; i++)
     {
         int elSum = 0;
-        for (int j = 0; j < column; j++) elSum += array[i, j];
+        for (int j = 0; j < column; j++) elSum += matr[i, j];
         Console.Write($"{elSum}; ");
         if (elSum < minSum)
         {
@@ -59,6 +59,6 @@ int row = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов: ");
 int column = int.Parse(Console.ReadLine());
 
-int[,] arr_1 = MassNums(row, column, 1, 10);
-Print(arr_1);
-FindMinRow(arr_1);
+int[,] mtrx_1 = MassNums(row, column, 1, 10);
+Print(mtrx_1);
+FindMinRow(mtrx_1);
