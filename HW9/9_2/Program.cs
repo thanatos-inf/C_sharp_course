@@ -10,3 +10,4 @@ int ElSum(int M, int N)
 
 Console.WriteLine(ElSum(1, 15));
 Console.WriteLine(ElSum(4, 8));
+
